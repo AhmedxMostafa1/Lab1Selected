@@ -1,0 +1,6 @@
+{
+  "anomaly_start_iso": "2026-03-07T14:32:56.133803+00:00",
+  "anomaly_end_iso": "2026-03-07T14:34:56.133803+00:00",
+  "anomaly_type": "latency_spike",
+  "expected_behavior": "During anomaly window, latency p95/p99 should spike due to /api/slow?hard=1 increase while error rate stays near baseline."
+}

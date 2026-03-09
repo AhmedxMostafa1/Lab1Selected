@@ -1,0 +1,36 @@
+{
+  "run_id": "run-1772893496",
+  "experiment_start_iso": "2026-03-07T14:24:56.133803+00:00",
+  "experiment_end_iso": "2026-03-07T14:34:56.133803+00:00",
+  "anomaly_start_iso": "2026-03-07T14:32:56.133803+00:00",
+  "anomaly_end_iso": "2026-03-07T14:34:56.133803+00:00",
+  "anomaly_type": "latency_spike",
+  "base_minutes": 8,
+  "requests_per_second": 7,
+  "stats": {
+    "requested": 4200,
+    "base_requested": 3360,
+    "anomaly_requested": 840,
+    "completed": 4200,
+    "transport_errors": 4037,
+    "by_endpoint": {
+      "normal": 2699,
+      "slow_hard": 415,
+      "slow": 668,
+      "db": 143,
+      "validate": 77,
+      "error": 198
+    },
+    "status_code_counts": {
+      "200": 155,
+      "500": 8
+    }
+  },
+  "exported_logs_entries": 1090,
+  "exported_error_logs": 108,
+  "requirements_check": {
+    "logs_entries_ge_1500": false,
+    "error_logs_ge_100": true,
+    "base_requests_ge_minimum": true
+  }
+}
