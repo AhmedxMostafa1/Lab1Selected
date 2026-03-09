@@ -301,19 +301,3 @@ Use target host/IP that can reach your Laravel app from Prometheus.
 - No Grafana data: verify Prometheus target is `UP`
 - Too few logs/errors: rerun with `--reset-aiops-log`, keep app running, and inspect `traffic_run_summary.json`
 
-## 12. Notes On Deliverables
-
-This repo currently includes core implementation artifacts:
-
-- logging channel
-- metrics endpoint
-- dashboard JSON
-- traffic generator + ground truth + log export flow
-
-External artifacts are produced by running the experiment and your monitoring stack:
-
-- `storage/logs/aiops.log`
-- generated `logs.json`
-- generated `ground_truth.json`
-- Grafana screenshots
-- report PDF
