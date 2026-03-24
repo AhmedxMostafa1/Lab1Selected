@@ -35,4 +35,11 @@ return [
         ],
     ],
 
+    'aiops' => [
+        'prometheus_url' => env('AIOPS_PROMETHEUS_URL', 'http://localhost:9090'),
+        'prometheus_timeout' => env('AIOPS_PROMETHEUS_TIMEOUT', 5),
+        'service_name' => env('AIOPS_SERVICE_NAME', env('APP_NAME', 'laravel-api')),
+        'webhook_url' => env('AIOPS_WEBHOOK_URL'),
+    ],
+
 ];

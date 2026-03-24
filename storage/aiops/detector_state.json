@@ -1,0 +1,698 @@
+{
+    "history": {
+        "/api/normal": [
+            {
+                "timestamp": "2026-03-24T14:30:35+00:00",
+                "request_rate": 0,
+                "error_rate": 0,
+                "average_latency": 0
+            },
+            {
+                "timestamp": "2026-03-24T14:30:56+00:00",
+                "request_rate": 0,
+                "error_rate": 0,
+                "average_latency": 0
+            },
+            {
+                "timestamp": "2026-03-24T14:31:16+00:00",
+                "request_rate": 0,
+                "error_rate": 0,
+                "average_latency": 0
+            },
+            {
+                "timestamp": "2026-03-24T14:31:36+00:00",
+                "request_rate": 0,
+                "error_rate": 0,
+                "average_latency": 0.0008891932773109137
+            },
+            {
+                "timestamp": "2026-03-24T14:31:56+00:00",
+                "request_rate": 0,
+                "error_rate": 0,
+                "average_latency": 0.0008891932773109139
+            },
+            {
+                "timestamp": "2026-03-24T14:32:16+00:00",
+                "request_rate": 0,
+                "error_rate": 0,
+                "average_latency": 0.0008891932773109139
+            },
+            {
+                "timestamp": "2026-03-24T14:32:36+00:00",
+                "request_rate": 0,
+                "error_rate": 0,
+                "average_latency": 0.0008891932773109139
+            },
+            {
+                "timestamp": "2026-03-24T14:32:56+00:00",
+                "request_rate": 0,
+                "error_rate": 0,
+                "average_latency": 0.0008891932773109137
+            },
+            {
+                "timestamp": "2026-03-24T14:33:16+00:00",
+                "request_rate": 0,
+                "error_rate": 0,
+                "average_latency": 0.0008891932773109139
+            },
+            {
+                "timestamp": "2026-03-24T14:33:36+00:00",
+                "request_rate": 0,
+                "error_rate": 0,
+                "average_latency": 0.0008891932773109139
+            },
+            {
+                "timestamp": "2026-03-24T14:33:56+00:00",
+                "request_rate": 0,
+                "error_rate": 0,
+                "average_latency": 0
+            },
+            {
+                "timestamp": "2026-03-24T14:34:16+00:00",
+                "request_rate": 0,
+                "error_rate": 0,
+                "average_latency": 0
+            },
+            {
+                "timestamp": "2026-03-24T14:34:36+00:00",
+                "request_rate": 0,
+                "error_rate": 0,
+                "average_latency": 0
+            },
+            {
+                "timestamp": "2026-03-24T14:34:56+00:00",
+                "request_rate": 0,
+                "error_rate": 0,
+                "average_latency": 0
+            },
+            {
+                "timestamp": "2026-03-24T14:37:17+00:00",
+                "request_rate": 0,
+                "error_rate": 0,
+                "average_latency": 0.0009478000000000098
+            },
+            {
+                "timestamp": "2026-03-24T14:37:37+00:00",
+                "request_rate": 0,
+                "error_rate": 0,
+                "average_latency": 0.0009478000000000098
+            },
+            {
+                "timestamp": "2026-03-24T14:37:57+00:00",
+                "request_rate": 0,
+                "error_rate": 0,
+                "average_latency": 0.0009478000000000098
+            },
+            {
+                "timestamp": "2026-03-24T14:38:17+00:00",
+                "request_rate": 0,
+                "error_rate": 0,
+                "average_latency": 0.0009478000000000098
+            },
+            {
+                "timestamp": "2026-03-24T14:38:37+00:00",
+                "request_rate": 0,
+                "error_rate": 0,
+                "average_latency": 0.002000353982300887
+            },
+            {
+                "timestamp": "2026-03-24T14:40:58+00:00",
+                "request_rate": 0,
+                "error_rate": 0,
+                "average_latency": 0.0014826438356164416
+            },
+            {
+                "timestamp": "2026-03-24T14:41:18+00:00",
+                "request_rate": 0,
+                "error_rate": 0,
+                "average_latency": 0.0014826438356164416
+            },
+            {
+                "timestamp": "2026-03-24T14:44:18+00:00",
+                "request_rate": 0,
+                "error_rate": 0,
+                "average_latency": 0.002647133550488601
+            },
+            {
+                "timestamp": "2026-03-24T14:44:38+00:00",
+                "request_rate": 0,
+                "error_rate": 0,
+                "average_latency": 0.0026471335504886016
+            },
+            {
+                "timestamp": "2026-03-24T14:44:58+00:00",
+                "request_rate": 0,
+                "error_rate": 0,
+                "average_latency": 0.002647133550488601
+            },
+            {
+                "timestamp": "2026-03-24T14:45:18+00:00",
+                "request_rate": 0,
+                "error_rate": 0,
+                "average_latency": 0.0026471335504886016
+            },
+            {
+                "timestamp": "2026-03-24T14:45:39+00:00",
+                "request_rate": 0,
+                "error_rate": 0,
+                "average_latency": 0.0026790867579908743
+            },
+            {
+                "timestamp": "2026-03-24T14:45:59+00:00",
+                "request_rate": 0,
+                "error_rate": 0,
+                "average_latency": 0.0026790867579908743
+            },
+            {
+                "timestamp": "2026-03-24T14:46:19+00:00",
+                "request_rate": 0,
+                "error_rate": 0,
+                "average_latency": 0.0026790867579908743
+            },
+            {
+                "timestamp": "2026-03-24T14:46:39+00:00",
+                "request_rate": 0,
+                "error_rate": 0,
+                "average_latency": 0.0027684047619047636
+            },
+            {
+                "timestamp": "2026-03-24T14:46:59+00:00",
+                "request_rate": 0,
+                "error_rate": 0,
+                "average_latency": 0.002471547619047619
+            }
+        ],
+        "/api/slow": [
+            {
+                "timestamp": "2026-03-24T14:30:15+00:00",
+                "request_rate": 0,
+                "error_rate": 0,
+                "average_latency": 0
+            },
+            {
+                "timestamp": "2026-03-24T14:30:35+00:00",
+                "request_rate": 0,
+                "error_rate": 0,
+                "average_latency": 0
+            },
+            {
+                "timestamp": "2026-03-24T14:30:56+00:00",
+                "request_rate": 0,
+                "error_rate": 0,
+                "average_latency": 0
+            },
+            {
+                "timestamp": "2026-03-24T14:31:16+00:00",
+                "request_rate": 0,
+                "error_rate": 0,
+                "average_latency": 0
+            },
+            {
+                "timestamp": "2026-03-24T14:33:56+00:00",
+                "request_rate": 0,
+                "error_rate": 0,
+                "average_latency": 0
+            },
+            {
+                "timestamp": "2026-03-24T14:34:16+00:00",
+                "request_rate": 0,
+                "error_rate": 0,
+                "average_latency": 0
+            },
+            {
+                "timestamp": "2026-03-24T14:34:36+00:00",
+                "request_rate": 0,
+                "error_rate": 0,
+                "average_latency": 0
+            },
+            {
+                "timestamp": "2026-03-24T14:34:56+00:00",
+                "request_rate": 0,
+                "error_rate": 0,
+                "average_latency": 0
+            }
+        ],
+        "/api/db": [
+            {
+                "timestamp": "2026-03-24T14:30:15+00:00",
+                "request_rate": 0,
+                "error_rate": 0,
+                "average_latency": 0
+            },
+            {
+                "timestamp": "2026-03-24T14:30:35+00:00",
+                "request_rate": 0,
+                "error_rate": 0,
+                "average_latency": 0
+            },
+            {
+                "timestamp": "2026-03-24T14:30:56+00:00",
+                "request_rate": 0,
+                "error_rate": 0,
+                "average_latency": 0
+            },
+            {
+                "timestamp": "2026-03-24T14:31:16+00:00",
+                "request_rate": 0,
+                "error_rate": 0,
+                "average_latency": 0
+            },
+            {
+                "timestamp": "2026-03-24T14:33:56+00:00",
+                "request_rate": 0,
+                "error_rate": 0,
+                "average_latency": 0
+            },
+            {
+                "timestamp": "2026-03-24T14:34:16+00:00",
+                "request_rate": 0,
+                "error_rate": 0,
+                "average_latency": 0
+            },
+            {
+                "timestamp": "2026-03-24T14:34:36+00:00",
+                "request_rate": 0,
+                "error_rate": 0,
+                "average_latency": 0
+            },
+            {
+                "timestamp": "2026-03-24T14:34:56+00:00",
+                "request_rate": 0,
+                "error_rate": 0,
+                "average_latency": 0
+            },
+            {
+                "timestamp": "2026-03-24T14:36:37+00:00",
+                "request_rate": 0,
+                "error_rate": 0,
+                "average_latency": 0
+            },
+            {
+                "timestamp": "2026-03-24T14:36:57+00:00",
+                "request_rate": 0,
+                "error_rate": 0,
+                "average_latency": 0
+            },
+            {
+                "timestamp": "2026-03-24T14:37:17+00:00",
+                "request_rate": 0,
+                "error_rate": 0,
+                "average_latency": 0
+            },
+            {
+                "timestamp": "2026-03-24T14:37:37+00:00",
+                "request_rate": 0,
+                "error_rate": 0,
+                "average_latency": 0
+            },
+            {
+                "timestamp": "2026-03-24T14:37:57+00:00",
+                "request_rate": 0,
+                "error_rate": 0,
+                "average_latency": 0
+            },
+            {
+                "timestamp": "2026-03-24T14:38:17+00:00",
+                "request_rate": 0,
+                "error_rate": 0,
+                "average_latency": 0
+            },
+            {
+                "timestamp": "2026-03-24T14:40:17+00:00",
+                "request_rate": 0,
+                "error_rate": 0,
+                "average_latency": 0
+            }
+        ],
+        "/api/error": [
+            {
+                "timestamp": "2026-03-24T14:30:35+00:00",
+                "request_rate": 0,
+                "error_rate": 0,
+                "average_latency": 0
+            },
+            {
+                "timestamp": "2026-03-24T14:30:56+00:00",
+                "request_rate": 0,
+                "error_rate": 0,
+                "average_latency": 0
+            },
+            {
+                "timestamp": "2026-03-24T14:31:16+00:00",
+                "request_rate": 0,
+                "error_rate": 0,
+                "average_latency": 0
+            },
+            {
+                "timestamp": "2026-03-24T14:31:36+00:00",
+                "request_rate": 0,
+                "error_rate": 0,
+                "average_latency": 0.000994600000000001
+            },
+            {
+                "timestamp": "2026-03-24T14:31:56+00:00",
+                "request_rate": 0,
+                "error_rate": 0,
+                "average_latency": 0.0009946000000000009
+            },
+            {
+                "timestamp": "2026-03-24T14:32:16+00:00",
+                "request_rate": 0,
+                "error_rate": 0,
+                "average_latency": 0.000994600000000001
+            },
+            {
+                "timestamp": "2026-03-24T14:32:36+00:00",
+                "request_rate": 0,
+                "error_rate": 0,
+                "average_latency": 0.000994600000000001
+            },
+            {
+                "timestamp": "2026-03-24T14:32:56+00:00",
+                "request_rate": 0,
+                "error_rate": 0,
+                "average_latency": 0.000994600000000001
+            },
+            {
+                "timestamp": "2026-03-24T14:33:16+00:00",
+                "request_rate": 0,
+                "error_rate": 0,
+                "average_latency": 0.0009946000000000009
+            },
+            {
+                "timestamp": "2026-03-24T14:33:36+00:00",
+                "request_rate": 0,
+                "error_rate": 0,
+                "average_latency": 0.0009946000000000009
+            },
+            {
+                "timestamp": "2026-03-24T14:33:56+00:00",
+                "request_rate": 0,
+                "error_rate": 0,
+                "average_latency": 0
+            },
+            {
+                "timestamp": "2026-03-24T14:34:16+00:00",
+                "request_rate": 0,
+                "error_rate": 0,
+                "average_latency": 0
+            },
+            {
+                "timestamp": "2026-03-24T14:34:36+00:00",
+                "request_rate": 0,
+                "error_rate": 0,
+                "average_latency": 0
+            },
+            {
+                "timestamp": "2026-03-24T14:34:56+00:00",
+                "request_rate": 0,
+                "error_rate": 0,
+                "average_latency": 0
+            },
+            {
+                "timestamp": "2026-03-24T14:37:17+00:00",
+                "request_rate": 0,
+                "error_rate": 0,
+                "average_latency": 0.0011296666666666584
+            },
+            {
+                "timestamp": "2026-03-24T14:37:37+00:00",
+                "request_rate": 0,
+                "error_rate": 0,
+                "average_latency": 0.0011296666666666584
+            },
+            {
+                "timestamp": "2026-03-24T14:37:57+00:00",
+                "request_rate": 0,
+                "error_rate": 0,
+                "average_latency": 0.0011296666666666584
+            },
+            {
+                "timestamp": "2026-03-24T14:38:17+00:00",
+                "request_rate": 0,
+                "error_rate": 0,
+                "average_latency": 0.0011296666666666584
+            },
+            {
+                "timestamp": "2026-03-24T14:38:37+00:00",
+                "request_rate": 0,
+                "error_rate": 0,
+                "average_latency": 0.00322142105263158
+            },
+            {
+                "timestamp": "2026-03-24T14:40:58+00:00",
+                "request_rate": 0,
+                "error_rate": 0,
+                "average_latency": 0.0010557499999999942
+            },
+            {
+                "timestamp": "2026-03-24T14:41:18+00:00",
+                "request_rate": 0,
+                "error_rate": 0,
+                "average_latency": 0.0010557499999999942
+            },
+            {
+                "timestamp": "2026-03-24T14:44:18+00:00",
+                "request_rate": 0,
+                "error_rate": 0,
+                "average_latency": 0.0024577058823529387
+            },
+            {
+                "timestamp": "2026-03-24T14:44:38+00:00",
+                "request_rate": 0,
+                "error_rate": 0,
+                "average_latency": 0.0024577058823529387
+            },
+            {
+                "timestamp": "2026-03-24T14:44:58+00:00",
+                "request_rate": 0,
+                "error_rate": 0,
+                "average_latency": 0.0024577058823529387
+            },
+            {
+                "timestamp": "2026-03-24T14:45:18+00:00",
+                "request_rate": 0,
+                "error_rate": 0,
+                "average_latency": 0.0024577058823529382
+            },
+            {
+                "timestamp": "2026-03-24T14:45:39+00:00",
+                "request_rate": 0,
+                "error_rate": 0,
+                "average_latency": 0.002022444444444438
+            },
+            {
+                "timestamp": "2026-03-24T14:45:59+00:00",
+                "request_rate": 0,
+                "error_rate": 0,
+                "average_latency": 0.002022444444444438
+            },
+            {
+                "timestamp": "2026-03-24T14:46:19+00:00",
+                "request_rate": 0,
+                "error_rate": 0,
+                "average_latency": 0.002022444444444438
+            },
+            {
+                "timestamp": "2026-03-24T14:46:39+00:00",
+                "request_rate": 0,
+                "error_rate": 0,
+                "average_latency": 0.001505833333333336
+            },
+            {
+                "timestamp": "2026-03-24T14:46:59+00:00",
+                "request_rate": 0,
+                "error_rate": 0,
+                "average_latency": 0.0020513000000000007
+            }
+        ],
+        "/api/validate": [
+            {
+                "timestamp": "2026-03-24T14:33:16+00:00",
+                "request_rate": 0,
+                "error_rate": 0,
+                "average_latency": 0.014139999999999969
+            },
+            {
+                "timestamp": "2026-03-24T14:33:36+00:00",
+                "request_rate": 0,
+                "error_rate": 0,
+                "average_latency": 0.014139999999999969
+            },
+            {
+                "timestamp": "2026-03-24T14:33:56+00:00",
+                "request_rate": 0,
+                "error_rate": 0,
+                "average_latency": 0
+            },
+            {
+                "timestamp": "2026-03-24T14:34:16+00:00",
+                "request_rate": 0,
+                "error_rate": 0,
+                "average_latency": 0
+            },
+            {
+                "timestamp": "2026-03-24T14:34:36+00:00",
+                "request_rate": 0,
+                "error_rate": 0,
+                "average_latency": 0
+            },
+            {
+                "timestamp": "2026-03-24T14:34:56+00:00",
+                "request_rate": 0,
+                "error_rate": 0,
+                "average_latency": 0
+            },
+            {
+                "timestamp": "2026-03-24T14:37:17+00:00",
+                "request_rate": 0,
+                "error_rate": 0,
+                "average_latency": 0.0031849999999999934
+            },
+            {
+                "timestamp": "2026-03-24T14:37:37+00:00",
+                "request_rate": 0,
+                "error_rate": 0,
+                "average_latency": 0.0031849999999999934
+            },
+            {
+                "timestamp": "2026-03-24T14:37:57+00:00",
+                "request_rate": 0,
+                "error_rate": 0,
+                "average_latency": 0.0031849999999999934
+            },
+            {
+                "timestamp": "2026-03-24T14:38:17+00:00",
+                "request_rate": 0,
+                "error_rate": 0,
+                "average_latency": 0.0031849999999999934
+            },
+            {
+                "timestamp": "2026-03-24T14:38:37+00:00",
+                "request_rate": 0,
+                "error_rate": 0,
+                "average_latency": 0.011995666666666663
+            },
+            {
+                "timestamp": "2026-03-24T14:40:37+00:00",
+                "request_rate": 0.027269504513103,
+                "error_rate": 0.3333333333333333,
+                "average_latency": 0.006732499999999975
+            },
+            {
+                "timestamp": "2026-03-24T14:40:58+00:00",
+                "request_rate": 0,
+                "error_rate": 0,
+                "average_latency": 0.006732499999999974
+            },
+            {
+                "timestamp": "2026-03-24T14:41:18+00:00",
+                "request_rate": 0,
+                "error_rate": 0,
+                "average_latency": 0.006732499999999975
+            },
+            {
+                "timestamp": "2026-03-24T14:43:38+00:00",
+                "request_rate": 0.05454396698271865,
+                "error_rate": 0.16666666666666666,
+                "average_latency": 0.00801946153846155
+            },
+            {
+                "timestamp": "2026-03-24T14:44:18+00:00",
+                "request_rate": 0,
+                "error_rate": 0,
+                "average_latency": 0.00805760000000002
+            },
+            {
+                "timestamp": "2026-03-24T14:44:38+00:00",
+                "request_rate": 0,
+                "error_rate": 0,
+                "average_latency": 0.00805760000000002
+            },
+            {
+                "timestamp": "2026-03-24T14:44:58+00:00",
+                "request_rate": 0,
+                "error_rate": 0,
+                "average_latency": 0.00805760000000002
+            },
+            {
+                "timestamp": "2026-03-24T14:45:18+00:00",
+                "request_rate": 0,
+                "error_rate": 0,
+                "average_latency": 0.00805760000000002
+            },
+            {
+                "timestamp": "2026-03-24T14:45:39+00:00",
+                "request_rate": 0,
+                "error_rate": 0,
+                "average_latency": 0.00809950000000001
+            },
+            {
+                "timestamp": "2026-03-24T14:45:59+00:00",
+                "request_rate": 0,
+                "error_rate": 0,
+                "average_latency": 0.00809950000000001
+            },
+            {
+                "timestamp": "2026-03-24T14:46:19+00:00",
+                "request_rate": 0,
+                "error_rate": 0,
+                "average_latency": 0.00809950000000001
+            },
+            {
+                "timestamp": "2026-03-24T14:46:39+00:00",
+                "request_rate": 0,
+                "error_rate": 0,
+                "average_latency": 0.0073941666666667025
+            },
+            {
+                "timestamp": "2026-03-24T14:46:59+00:00",
+                "request_rate": 0,
+                "error_rate": 0,
+                "average_latency": 0.01180966666666667
+            },
+            {
+                "timestamp": "2026-03-24T14:47:19+00:00",
+                "request_rate": 0,
+                "error_rate": 0,
+                "average_latency": 0.013459333333333304
+            },
+            {
+                "timestamp": "2026-03-24T14:47:39+00:00",
+                "request_rate": 0,
+                "error_rate": 0,
+                "average_latency": 0.013459333333333304
+            },
+            {
+                "timestamp": "2026-03-24T14:47:59+00:00",
+                "request_rate": 0,
+                "error_rate": 0,
+                "average_latency": 0.013459333333333304
+            },
+            {
+                "timestamp": "2026-03-24T14:48:19+00:00",
+                "request_rate": 0.03311477958203493,
+                "error_rate": 0,
+                "average_latency": 0.011482666666666653
+            },
+            {
+                "timestamp": "2026-03-24T14:48:39+00:00",
+                "request_rate": 0.03384557520226421,
+                "error_rate": 0,
+                "average_latency": 0.0075293333333333505
+            },
+            {
+                "timestamp": "2026-03-24T14:48:59+00:00",
+                "request_rate": 0.031629917891625836,
+                "error_rate": 0,
+                "average_latency": 0.0075293333333333505
+            }
+        ]
+    },
+    "active_incidents": {
+        "ERROR_STORM|/api/db,/api/error,/api/slow": {
+            "incident_id": "68899213-7551-4a65-bcd1-6939140b631c",
+            "last_seen_at": "2026-03-24T14:48:59+00:00"
+        }
+    }
+}
