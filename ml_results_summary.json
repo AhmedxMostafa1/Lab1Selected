@@ -1,0 +1,87 @@
+{
+  "dataset": {
+    "source_logs": "logs.json",
+    "source_ground_truth": "ground_truth.json",
+    "source_metrics_history": "prometheus_metrics_history.csv",
+    "observation_count": 2845,
+    "training_observation_count": 2255,
+    "window_size_seconds": 30,
+    "scrape_interval_seconds": 1,
+    "endpoints": [
+      "/api/db",
+      "/api/error",
+      "/api/normal",
+      "/api/slow",
+      "/api/validate"
+    ],
+    "start_timestamp": "2026-03-07T14:24:56.000Z",
+    "end_timestamp": "2026-03-07T14:34:54.000Z"
+  },
+  "ground_truth": {
+    "anomaly_type": "latency_spike",
+    "anomaly_start": "2026-03-07T14:32:56.133Z",
+    "anomaly_end": "2026-03-07T14:34:56.133Z",
+    "expected_behavior": "During anomaly window, latency p95/p99 should spike due to /api/slow?hard=1 increase while error rate stays near baseline."
+  },
+  "model": {
+    "algorithm": "Isolation Forest",
+    "isolation_trees": 120,
+    "sample_size": 256,
+    "observation_threshold": 0.691062,
+    "window_threshold": 0.699493,
+    "feature_count": 24,
+    "features": [
+      "num:latency",
+      "num:avg_latency",
+      "num:max_latency",
+      "num:request_rate",
+      "num:error_rate",
+      "num:latency_std",
+      "num:errors_per_window",
+      "num:endpoint_frequency",
+      "num:request_count_window",
+      "num:timeout_error_share",
+      "num:system_error_share",
+      "num:validation_error_share",
+      "num:database_error_share",
+      "endpoint:/api/db",
+      "endpoint:/api/error",
+      "endpoint:/api/normal",
+      "endpoint:/api/slow",
+      "endpoint:/api/validate",
+      "error_category:NONE",
+      "error_category:TIMEOUT_ERROR",
+      "error_category:SYSTEM_ERROR",
+      "error_category:VALIDATION_ERROR",
+      "error_category:DATABASE_ERROR",
+      "error_category:UNKNOWN"
+    ]
+  },
+  "performance": {
+    "predicted_anomaly_windows": 3,
+    "ground_truth_anomaly_windows": 3,
+    "true_positive_windows": 2,
+    "false_positive_windows": 1,
+    "false_negative_windows": 1,
+    "precision": 0.6667,
+    "recall": 0.6667,
+    "detected_ground_truth_window": true,
+    "peak_latency_window": {
+      "timestamp": "2026-03-07T14:34:26.000Z",
+      "slow_latency_ms": 6259.083
+    },
+    "max_anomaly_score": 0.711695
+  },
+  "files": {
+    "dataset": "aiops_dataset.csv",
+    "predictions": "anomaly_predictions.csv",
+    "history": "prometheus_metrics_history.csv",
+    "report": "ML_Engineering_Report.md",
+    "plots": {
+      "latency": "visualizations\\ml\\latency_timeline.svg",
+      "error_rate": "visualizations\\ml\\error_rate_timeline.svg",
+      "anomaly_score": "visualizations\\ml\\anomaly_score_timeline.svg",
+      "overview": "visualizations\\ml\\overview.svg"
+    }
+  }
+}

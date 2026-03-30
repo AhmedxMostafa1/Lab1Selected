@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="420" viewBox="0 0 1200 420">
+  <rect width="1200" height="420" fill="#ffffff"/>
+  <text x="80" y="28" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#111827">Isolation Forest Anomaly Score</text>
+  <text x="80" y="50" font-family="Arial, sans-serif" font-size="12" fill="#4b5563">Window score with learned anomaly threshold</text>
+  <rect x="980.266" y="70" width="240.0000000000001" height="280" fill="#fee2e2" opacity="0.8"/>
+  
+  <line x1="80" y1="350" x2="1160" y2="350" stroke="#e5e7eb" stroke-width="1"/>
+  <text x="68" y="354" text-anchor="end" font-family="Arial, sans-serif" font-size="11" fill="#6b7280">0</text>
+  <line x1="80" y1="294" x2="1160" y2="294" stroke="#e5e7eb" stroke-width="1"/>
+  <text x="68" y="298" text-anchor="end" font-family="Arial, sans-serif" font-size="11" fill="#6b7280">0.2</text>
+  <line x1="80" y1="238" x2="1160" y2="238" stroke="#e5e7eb" stroke-width="1"/>
+  <text x="68" y="242" text-anchor="end" font-family="Arial, sans-serif" font-size="11" fill="#6b7280">0.4</text>
+  <line x1="80" y1="181.99999999999997" x2="1160" y2="181.99999999999997" stroke="#e5e7eb" stroke-width="1"/>
+  <text x="68" y="185.99999999999997" text-anchor="end" font-family="Arial, sans-serif" font-size="11" fill="#6b7280">0.6</text>
+  <line x1="80" y1="126" x2="1160" y2="126" stroke="#e5e7eb" stroke-width="1"/>
+  <text x="68" y="130" text-anchor="end" font-family="Arial, sans-serif" font-size="11" fill="#6b7280">0.8</text>
+  <line x1="80" y1="70" x2="1160" y2="70" stroke="#e5e7eb" stroke-width="1"/>
+  <text x="68" y="74" text-anchor="end" font-family="Arial, sans-serif" font-size="11" fill="#6b7280">1</text>
+  <line x1="80" y1="70" x2="80" y2="350" stroke="#111827" stroke-width="1.5"/>
+  <line x1="80" y1="350" x2="1160" y2="350" stroke="#111827" stroke-width="1.5"/>
+  <polyline fill="none" stroke="#7c3aed" stroke-width="2.5" points="80,177.527 140,181.9958 200,180.15116 260,182.13188 320,153.5744 380,237.32688000000002 440,237.32688000000002 500,237.32688000000002 560,237.32688000000002 620,237.32688000000002 680,177.18624 740,182.41132 800,154.57568 860,154.33095999999998 920,191.85628 980,183.03628 1040,177.90668 1100,153.21012 1160,150.7254"/>
+  <line x1="80" y1="154.14195999999998" x2="1160" y2="154.14195999999998" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <text x="1160" y="146.14195999999998" text-anchor="end" font-family="Arial, sans-serif" font-size="11" fill="#ef4444">threshold 0.699</text>
+  <circle cx="80" cy="177.527" r="2.5" fill="#2563eb" opacity="0.85"/><circle cx="140" cy="181.9958" r="2.5" fill="#2563eb" opacity="0.85"/><circle cx="200" cy="180.15116" r="2.5" fill="#2563eb" opacity="0.85"/><circle cx="260" cy="182.13188" r="2.5" fill="#2563eb" opacity="0.85"/><circle cx="320" cy="153.5744" r="4" fill="#dc2626" opacity="0.85"/><circle cx="380" cy="237.32688000000002" r="2.5" fill="#2563eb" opacity="0.85"/><circle cx="440" cy="237.32688000000002" r="2.5" fill="#2563eb" opacity="0.85"/><circle cx="500" cy="237.32688000000002" r="2.5" fill="#2563eb" opacity="0.85"/><circle cx="560" cy="237.32688000000002" r="2.5" fill="#2563eb" opacity="0.85"/><circle cx="620" cy="237.32688000000002" r="2.5" fill="#2563eb" opacity="0.85"/><circle cx="680" cy="177.18624" r="2.5" fill="#2563eb" opacity="0.85"/><circle cx="740" cy="182.41132" r="2.5" fill="#2563eb" opacity="0.85"/><circle cx="800" cy="154.57568" r="2.5" fill="#2563eb" opacity="0.85"/><circle cx="860" cy="154.33095999999998" r="2.5" fill="#2563eb" opacity="0.85"/><circle cx="920" cy="191.85628" r="2.5" fill="#2563eb" opacity="0.85"/><circle cx="980" cy="183.03628" r="2.5" fill="#2563eb" opacity="0.85"/><circle cx="1040" cy="177.90668" r="2.5" fill="#2563eb" opacity="1"/><circle cx="1100" cy="153.21012" r="4" fill="#dc2626" opacity="1"/><circle cx="1160" cy="150.7254" r="4" fill="#dc2626" opacity="1"/>
+  
+  <line x1="80" y1="350" x2="80" y2="356" stroke="#111827" stroke-width="1"/>
+  <text x="80" y="372" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#6b7280">14:25:26</text>
+  <line x1="260" y1="350" x2="260" y2="356" stroke="#111827" stroke-width="1"/>
+  <text x="260" y="372" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#6b7280">14:26:56</text>
+  <line x1="380" y1="350" x2="380" y2="356" stroke="#111827" stroke-width="1"/>
+  <text x="380" y="372" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#6b7280">14:27:56</text>
+  <line x1="560" y1="350" x2="560" y2="356" stroke="#111827" stroke-width="1"/>
+  <text x="560" y="372" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#6b7280">14:29:26</text>
+  <line x1="680" y1="350" x2="680" y2="356" stroke="#111827" stroke-width="1"/>
+  <text x="680" y="372" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#6b7280">14:30:26</text>
+  <line x1="860" y1="350" x2="860" y2="356" stroke="#111827" stroke-width="1"/>
+  <text x="860" y="372" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#6b7280">14:31:56</text>
+  <line x1="980" y1="350" x2="980" y2="356" stroke="#111827" stroke-width="1"/>
+  <text x="980" y="372" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#6b7280">14:32:56</text>
+  <line x1="1160" y1="350" x2="1160" y2="356" stroke="#111827" stroke-width="1"/>
+  <text x="1160" y="372" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#6b7280">14:34:26</text>
+  <text x="600" y="402" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#374151">Time</text>
+  <text x="20" y="210" transform="rotate(-90 20 210)" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#374151">Score</text>
+  <rect x="930" y="22" width="14" height="14" fill="#fee2e2"/>
+  <text x="952" y="33" font-family="Arial, sans-serif" font-size="11" fill="#374151">Ground-truth anomaly interval</text>
+  <circle cx="1040" cy="29" r="4" fill="#dc2626"/>
+  <text x="1052" y="33" font-family="Arial, sans-serif" font-size="11" fill="#374151">Predicted anomaly</text>
+</svg>
