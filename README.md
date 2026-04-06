@@ -7,6 +7,8 @@ This project is a Laravel 12 API instrumented for AIOps observability:
 - Grafana dashboard for traffic/error/latency/anomaly visibility
 - Controlled traffic generator with anomaly injection
 - Dataset and ground-truth export (`logs.json`, `ground_truth.json`)
+- Incident detection records in `storage/aiops/incidents.json`
+- Incident response records in `storage/aiops/responses.json`
 
 ## 1. Project Structure
 
@@ -14,9 +16,14 @@ This project is a Laravel 12 API instrumented for AIOps observability:
 - `app/Exceptions/Handler.php`: centralized error categorization
 - `app/Support/PrometheusMetrics.php`: in-process metric store + `/metrics` renderer
 - `config/logging.php`: custom `aiops` JSON logging channel
+- `config/aiops.php`: automation policies, paths, and escalation settings
 - `routes/api.php`: API endpoints used by experiments
 - `routes/web.php`: `/metrics` endpoint
 - `bootstrap/app.php`: middleware and API route registration
+- `app/Services/AIOpsDetectionEngine.php`: incident detection engine
+- `app/Services/AIOpsAutomationEngine.php`: incident response automation engine
+- `app/Console/Commands/AIOpsDetectCommand.php`: incident detection command
+- `app/Console/Commands/AIOpsRespondCommand.php`: automation response command
 - `docker-compose.yml`: Prometheus + Grafana stack
 - `monitoring/prometheus/prometheus.yml`: Prometheus scrape config
 - `monitoring/grafana/dashboards/aiops-red-dashboard.json`: Grafana dashboard export
@@ -309,11 +316,77 @@ This repo currently includes core implementation artifacts:
 - metrics endpoint
 - dashboard JSON
 - traffic generator + ground truth + log export flow
+- incident detection command and JSON incident store
+- automation engine command and JSON response store
 
 External artifacts are produced by running the experiment and your monitoring stack:
 
 - `storage/logs/aiops.log`
 - generated `logs.json`
 - generated `ground_truth.json`
+- generated `storage/aiops/incidents.json`
+- generated `storage/aiops/responses.json`
 - Grafana screenshots
 - report PDF
+
+## 13. AIOps Automation Engine
+
+The final AIOps stage in this project is an automation engine that reacts to incidents emitted by the detector.
+
+### Command
+
+Run one automation cycle:
+
+```bash
+php artisan aiops:respond
+```
+
+Run continuously:
+
+```bash
+php artisan aiops:respond --watch --interval=20
+```
+
+Simulate a failed action to demonstrate escalation:
+
+```bash
+php artisan aiops:respond --simulate-failure=ERROR_STORM
+```
+
+### Response policies
+
+Configured in `config/aiops.php`:
+
+- `LATENCY_SPIKE` -> `restart_service`
+- `ERROR_STORM` -> `send_alert`
+- `TRAFFIC_SURGE` -> `scale_service`
+- `SERVICE_DEGRADATION` -> `restart_service`
+- `LOCALIZED_ENDPOINT_FAILURE` -> `traffic_throttling`
+
+### Action simulation and logs
+
+Actions are simulated for lab safety, but every response is written to `storage/aiops/responses.json` with:
+
+- `incident_id`
+- `action_taken`
+- `timestamp`
+- `result`
+- `notes`
+
+The engine also tracks prior responses in `storage/aiops/response_state.json` so it can identify incidents that remain open.
+
+### Escalation logic
+
+The engine raises `CRITICAL_ALERT` when either:
+
+1. the simulated automated action fails
+2. the incident is still open during a later response cycle after an earlier automated response
+
+### Demonstration flow
+
+1. Run `php artisan aiops:detect`
+2. Trigger latency or error anomalies
+3. Confirm incidents appear in `storage/aiops/incidents.json`
+4. Run `php artisan aiops:respond`
+5. Inspect `storage/aiops/responses.json`
+6. Run `php artisan aiops:respond` again while an incident is still open to demonstrate escalation

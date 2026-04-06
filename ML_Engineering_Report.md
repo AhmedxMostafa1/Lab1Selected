@@ -68,3 +68,19 @@ The detector scores every endpoint snapshot and then aggregates those scores int
 - Error-rate plot: `visualizations\ml\error_rate_timeline.svg`
 - Anomaly-score plot: `visualizations\ml\anomaly_score_timeline.svg`
 - Combined overview plot: `visualizations\ml\overview.svg`
+
+## Automation Engine
+
+The final AIOps stage was implemented as a Laravel automation engine that reads incident records from `storage/aiops/incidents.json` and executes `php artisan aiops:respond`.
+
+Automated response policies are configured in `config/aiops.php`. The current mappings are:
+
+- `LATENCY_SPIKE` -> `restart_service`
+- `ERROR_STORM` -> `send_alert`
+- `TRAFFIC_SURGE` -> `scale_service`
+- `SERVICE_DEGRADATION` -> `restart_service`
+- `LOCALIZED_ENDPOINT_FAILURE` -> `traffic_throttling`
+
+Each automated action is simulated for lab safety, but every execution is logged to `storage/aiops/responses.json` with the required fields `incident_id`, `action_taken`, `timestamp`, `result`, and `notes`.
+
+Escalation is handled automatically through a `CRITICAL_ALERT` action. The engine escalates when the simulated automated action fails or when the same incident remains open during a later automation cycle, which indicates that the anomaly persisted after the first response.
