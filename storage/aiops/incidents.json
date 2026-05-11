@@ -1628,7 +1628,7 @@
         "incident_id": "68899213-7551-4a65-bcd1-6939140b631c",
         "incident_type": "ERROR_STORM",
         "severity": "critical",
-        "status": "open",
+        "status": "resolved",
         "detected_at": "2026-03-24T14:47:39+00:00",
         "affected_service": "Laravel",
         "affected_endpoints": [
@@ -1743,6 +1743,1322 @@
                 }
             }
         },
-        "summary": "Multiple endpoints are emitting elevated error rates at the same time."
+        "summary": "Multiple endpoints are emitting elevated error rates at the same time.",
+        "resolved_at": "2026-04-11T16:58:44+00:00"
+    },
+    {
+        "incident_id": "0f942ca5-ac82-442c-8aba-f1a312bf3fed",
+        "incident_type": "TRAFFIC_SURGE",
+        "severity": "medium",
+        "status": "resolved",
+        "detected_at": "2026-04-11T16:59:05+00:00",
+        "affected_service": "Laravel",
+        "affected_endpoints": [
+            "/api/normal"
+        ],
+        "triggering_signals": [
+            {
+                "signal_type": "traffic",
+                "endpoint": "/api/normal",
+                "metric": "request_rate",
+                "observed": 0.269584,
+                "baseline": 0,
+                "reason": "Traffic rate spiked above the endpoint baseline."
+            }
+        ],
+        "baseline_values": {
+            "/api/normal": {
+                "average_latency": 0.001288519167488745,
+                "request_rate": 0,
+                "error_rate": 0,
+                "sample_size": 30
+            }
+        },
+        "observed_values": {
+            "/api/normal": {
+                "request_rate": 0.26958397105885623,
+                "error_rate": 0,
+                "errors_per_second": 0,
+                "average_latency": 0.002080935483871001,
+                "latency_percentiles": {
+                    "p50": 0.025,
+                    "p95": 0.0475,
+                    "p99": 0.0495
+                },
+                "error_category_counters": []
+            }
+        },
+        "summary": "Endpoint /api/normal received a traffic surge.",
+        "resolved_at": "2026-04-11T16:59:45+00:00"
+    },
+    {
+        "incident_id": "7c975346-add6-41ab-956c-55454cc49cce",
+        "incident_type": "LATENCY_SPIKE",
+        "severity": "high",
+        "status": "resolved",
+        "detected_at": "2026-04-11T16:59:05+00:00",
+        "affected_service": "Laravel",
+        "affected_endpoints": [
+            "/api/slow"
+        ],
+        "triggering_signals": [
+            {
+                "signal_type": "latency",
+                "endpoint": "/api/slow",
+                "metric": "average_latency",
+                "observed": 0.985811,
+                "baseline": 0,
+                "reason": "Latency is above the learned baseline."
+            }
+        ],
+        "baseline_values": {
+            "/api/slow": {
+                "average_latency": 0,
+                "request_rate": 0,
+                "error_rate": 0,
+                "sample_size": 9
+            }
+        },
+        "observed_values": {
+            "/api/slow": {
+                "request_rate": 0.060873799916515925,
+                "error_rate": 0.14285714285714285,
+                "errors_per_second": 0.008696257130930847,
+                "average_latency": 0.98581128571433,
+                "latency_percentiles": {
+                    "p50": 0.375,
+                    "p95": 8.249999999999996,
+                    "p99": 9.649999999999999
+                },
+                "error_category_counters": {
+                    "TIMEOUT_ERROR": 1.017021550686659
+                }
+            }
+        },
+        "summary": "Endpoint /api/slow exceeded its normal latency envelope.",
+        "resolved_at": "2026-04-11T16:59:45+00:00"
+    },
+    {
+        "incident_id": "c5efdfba-b38e-43cf-a860-d99d1ded37a8",
+        "incident_type": "LOCALIZED_ENDPOINT_FAILURE",
+        "severity": "critical",
+        "status": "resolved",
+        "detected_at": "2026-04-11T16:59:05+00:00",
+        "affected_service": "Laravel",
+        "affected_endpoints": [
+            "/api/error"
+        ],
+        "triggering_signals": [
+            {
+                "signal_type": "error_rate",
+                "endpoint": "/api/error",
+                "metric": "error_rate",
+                "observed": 1,
+                "baseline": 0,
+                "reason": "Error rate crossed the endpoint threshold."
+            },
+            {
+                "signal_type": "endpoint_specific",
+                "endpoint": "/api/error",
+                "metric": "error_rate",
+                "observed": 1,
+                "baseline": 0,
+                "reason": "This endpoint is failing much harder than its peers."
+            }
+        ],
+        "baseline_values": {
+            "/api/error": {
+                "average_latency": 0.001180273459383751,
+                "request_rate": 0,
+                "error_rate": 0,
+                "sample_size": 30
+            }
+        },
+        "observed_values": {
+            "/api/error": {
+                "request_rate": 0.03478502852372339,
+                "error_rate": 1,
+                "errors_per_second": 0.03478502852372339,
+                "average_latency": 0.0016367500000000201,
+                "latency_percentiles": {
+                    "p50": 0.025,
+                    "p95": 0.0475,
+                    "p99": 0.0495
+                },
+                "error_category_counters": {
+                    "SYSTEM_ERROR": 4.068086202746636
+                }
+            }
+        },
+        "summary": "Endpoint /api/error is failing independently of the rest of the service.",
+        "resolved_at": "2026-04-11T16:59:45+00:00"
+    },
+    {
+        "incident_id": "7fb1eb9a-f743-4801-bbca-a3e1b7a4bc58",
+        "incident_type": "ERROR_STORM",
+        "severity": "critical",
+        "status": "resolved",
+        "detected_at": "2026-04-11T16:59:45+00:00",
+        "affected_service": "Laravel",
+        "affected_endpoints": [
+            "/api/slow",
+            "/api/error"
+        ],
+        "triggering_signals": [
+            {
+                "signal_type": "error_rate",
+                "endpoint": "/api/slow",
+                "metric": "error_rate",
+                "observed": 0.230757,
+                "baseline": 0,
+                "reason": "Error rate crossed the endpoint threshold."
+            },
+            {
+                "signal_type": "error_rate",
+                "endpoint": "/api/error",
+                "metric": "error_rate",
+                "observed": 0.999947,
+                "baseline": 0,
+                "reason": "Error rate crossed the endpoint threshold."
+            },
+            {
+                "signal_type": "endpoint_specific",
+                "endpoint": "/api/error",
+                "metric": "error_rate",
+                "observed": 0.999947,
+                "baseline": 0,
+                "reason": "This endpoint is failing much harder than its peers."
+            }
+        ],
+        "baseline_values": {
+            "/api/slow": {
+                "average_latency": 0,
+                "request_rate": 0,
+                "error_rate": 0,
+                "sample_size": 9
+            },
+            "/api/error": {
+                "average_latency": 0.001180273459383751,
+                "request_rate": 0,
+                "error_rate": 0,
+                "sample_size": 30
+            }
+        },
+        "observed_values": {
+            "/api/slow": {
+                "request_rate": 0.23468124599478352,
+                "error_rate": 0.23075705585308,
+                "errors_per_second": 0.05415435338968867,
+                "average_latency": 1.5460194615384701,
+                "latency_percentiles": {
+                    "p50": 0.38461538461538464,
+                    "p95": 8.916666666666668,
+                    "p99": 9.783333333333333
+                },
+                "error_category_counters": {
+                    "TIMEOUT_ERROR": 6.163858462229458
+                }
+            },
+            "/api/error": {
+                "request_rate": 0.09026201769030136,
+                "error_rate": 0.9999472420300135,
+                "errors_per_second": 0.09025725564948113,
+                "average_latency": 0.0020588999999999968,
+                "latency_percentiles": {
+                    "p50": 0.025,
+                    "p95": 0.0475,
+                    "p99": 0.0495
+                },
+                "error_category_counters": {
+                    "SYSTEM_ERROR": 10.273097437049097
+                }
+            }
+        },
+        "summary": "Multiple endpoints are emitting elevated error rates at the same time.",
+        "resolved_at": "2026-04-11T17:00:05+00:00"
+    },
+    {
+        "incident_id": "8d5497e2-8d55-469c-82e0-879fccf5809b",
+        "incident_type": "ERROR_STORM",
+        "severity": "critical",
+        "status": "resolved",
+        "detected_at": "2026-04-11T17:00:05+00:00",
+        "affected_service": "Laravel",
+        "affected_endpoints": [
+            "/api/slow",
+            "/api/error",
+            "/api/validate"
+        ],
+        "triggering_signals": [
+            {
+                "signal_type": "error_rate",
+                "endpoint": "/api/slow",
+                "metric": "error_rate",
+                "observed": 0.219512,
+                "baseline": 0,
+                "reason": "Error rate crossed the endpoint threshold."
+            },
+            {
+                "signal_type": "error_rate",
+                "endpoint": "/api/error",
+                "metric": "error_rate",
+                "observed": 1,
+                "baseline": 0,
+                "reason": "Error rate crossed the endpoint threshold."
+            },
+            {
+                "signal_type": "endpoint_specific",
+                "endpoint": "/api/error",
+                "metric": "error_rate",
+                "observed": 1,
+                "baseline": 0.109756,
+                "reason": "This endpoint is failing much harder than its peers."
+            },
+            {
+                "signal_type": "endpoint_specific",
+                "endpoint": "/api/validate",
+                "metric": "error_rate",
+                "observed": 0.5,
+                "baseline": 0.109756,
+                "reason": "This endpoint is failing much harder than its peers."
+            }
+        ],
+        "baseline_values": {
+            "/api/slow": {
+                "average_latency": 0,
+                "request_rate": 0,
+                "error_rate": 0,
+                "sample_size": 9
+            },
+            "/api/error": {
+                "average_latency": 0.001180273459383751,
+                "request_rate": 0,
+                "error_rate": 0,
+                "sample_size": 30
+            },
+            "/api/validate": {
+                "average_latency": 0.00824273910256405,
+                "request_rate": 0.005433914107302605,
+                "error_rate": 0.005952380952380952,
+                "sample_size": 30
+            }
+        },
+        "observed_values": {
+            "/api/slow": {
+                "request_rate": 0.37273743829377165,
+                "error_rate": 0.21951219512195125,
+                "errors_per_second": 0.08182041328399867,
+                "average_latency": 1.5139017317073147,
+                "latency_percentiles": {
+                    "p50": 0.3806818181818182,
+                    "p95": 8.86111111111111,
+                    "p99": 9.772222222222222
+                },
+                "error_category_counters": {
+                    "TIMEOUT_ERROR": 9.310858530125799
+                }
+            },
+            "/api/error": {
+                "request_rate": 0.09091157031555407,
+                "error_rate": 1,
+                "errors_per_second": 0.09091157031555407,
+                "average_latency": 0.002058899999999997,
+                "latency_percentiles": {
+                    "p50": 0.025,
+                    "p95": 0.0475,
+                    "p99": 0.0495
+                },
+                "error_category_counters": {
+                    "SYSTEM_ERROR": 10.345398366806444
+                }
+            },
+            "/api/validate": {
+                "request_rate": 0.018182314063110813,
+                "error_rate": 0.5,
+                "errors_per_second": 0.009091157031555407,
+                "average_latency": 0.012245999999999757,
+                "latency_percentiles": {
+                    "p50": 0.025,
+                    "p95": 0.04750000000000001,
+                    "p99": 0.0495
+                },
+                "error_category_counters": {
+                    "VALIDATION_ERROR": 1.0345398366806444
+                }
+            }
+        },
+        "summary": "Multiple endpoints are emitting elevated error rates at the same time.",
+        "resolved_at": "2026-04-11T17:02:06+00:00"
+    },
+    {
+        "incident_id": "3aed4677-3f98-4885-876b-60c3b665d743",
+        "incident_type": "ERROR_STORM",
+        "severity": "critical",
+        "status": "resolved",
+        "detected_at": "2026-04-11T17:02:06+00:00",
+        "affected_service": "Laravel",
+        "affected_endpoints": [
+            "/api/slow",
+            "/api/error"
+        ],
+        "triggering_signals": [
+            {
+                "signal_type": "error_rate",
+                "endpoint": "/api/slow",
+                "metric": "error_rate",
+                "observed": 0.285714,
+                "baseline": 0,
+                "reason": "Error rate crossed the endpoint threshold."
+            },
+            {
+                "signal_type": "error_rate",
+                "endpoint": "/api/error",
+                "metric": "error_rate",
+                "observed": 1,
+                "baseline": 0,
+                "reason": "Error rate crossed the endpoint threshold."
+            },
+            {
+                "signal_type": "endpoint_specific",
+                "endpoint": "/api/error",
+                "metric": "error_rate",
+                "observed": 1,
+                "baseline": 0,
+                "reason": "This endpoint is failing much harder than its peers."
+            }
+        ],
+        "baseline_values": {
+            "/api/slow": {
+                "average_latency": 0,
+                "request_rate": 0,
+                "error_rate": 0,
+                "sample_size": 9
+            },
+            "/api/error": {
+                "average_latency": 0.001180273459383751,
+                "request_rate": 0,
+                "error_rate": 0,
+                "sample_size": 30
+            }
+        },
+        "observed_values": {
+            "/api/slow": {
+                "request_rate": 0.46662000466620007,
+                "error_rate": 0.2857142857142857,
+                "errors_per_second": 0.13332000133320002,
+                "average_latency": 1.6181096976744156,
+                "latency_percentiles": {
+                    "p50": 0.3833333333333333,
+                    "p95": 8.868421052631577,
+                    "p99": 9.773684210526316
+                },
+                "error_category_counters": {
+                    "TIMEOUT_ERROR": 19.69325648430947
+                }
+            },
+            "/api/error": {
+                "request_rate": 0.06666000066660001,
+                "error_rate": 1,
+                "errors_per_second": 0.06666000066660001,
+                "average_latency": 0.001646049999999999,
+                "latency_percentiles": {
+                    "p50": 0.025,
+                    "p95": 0.0475,
+                    "p99": 0.0495
+                },
+                "error_category_counters": {
+                    "SYSTEM_ERROR": 20.72974366769418
+                }
+            }
+        },
+        "summary": "Multiple endpoints are emitting elevated error rates at the same time.",
+        "resolved_at": "2026-04-11T17:03:26+00:00"
+    },
+    {
+        "incident_id": "8785f865-2539-4600-a0aa-3506186a951a",
+        "incident_type": "LATENCY_SPIKE",
+        "severity": "high",
+        "status": "resolved",
+        "detected_at": "2026-04-11T17:03:26+00:00",
+        "affected_service": "Laravel",
+        "affected_endpoints": [
+            "/api/slow"
+        ],
+        "triggering_signals": [
+            {
+                "signal_type": "latency",
+                "endpoint": "/api/slow",
+                "metric": "average_latency",
+                "observed": 1.801078,
+                "baseline": 0,
+                "reason": "Latency is above the learned baseline."
+            }
+        ],
+        "baseline_values": {
+            "/api/slow": {
+                "average_latency": 0,
+                "request_rate": 0,
+                "error_rate": 0,
+                "sample_size": 9
+            }
+        },
+        "observed_values": {
+            "/api/slow": {
+                "request_rate": 0,
+                "error_rate": 0,
+                "errors_per_second": 0,
+                "average_latency": 1.8010778039215705,
+                "latency_percentiles": {
+                    "p50": 0.39351851851851855,
+                    "p95": 8.979999999999997,
+                    "p99": 9.796
+                },
+                "error_category_counters": {
+                    "TIMEOUT_ERROR": 26.588589765707983
+                }
+            }
+        },
+        "summary": "Endpoint /api/slow exceeded its normal latency envelope.",
+        "resolved_at": "2026-04-11T17:03:46+00:00"
+    },
+    {
+        "incident_id": "9c2e8087-71f2-4140-8063-54f5aecde087",
+        "incident_type": "ERROR_STORM",
+        "severity": "critical",
+        "status": "resolved",
+        "detected_at": "2026-04-11T17:03:46+00:00",
+        "affected_service": "Laravel",
+        "affected_endpoints": [
+            "/api/slow",
+            "/api/error"
+        ],
+        "triggering_signals": [
+            {
+                "signal_type": "error_rate",
+                "endpoint": "/api/slow",
+                "metric": "error_rate",
+                "observed": 0.363636,
+                "baseline": 0,
+                "reason": "Error rate crossed the endpoint threshold."
+            },
+            {
+                "signal_type": "endpoint_specific",
+                "endpoint": "/api/slow",
+                "metric": "error_rate",
+                "observed": 0.363636,
+                "baseline": 0,
+                "reason": "This endpoint is failing much harder than its peers."
+            },
+            {
+                "signal_type": "error_rate",
+                "endpoint": "/api/error",
+                "metric": "error_rate",
+                "observed": 1,
+                "baseline": 0,
+                "reason": "Error rate crossed the endpoint threshold."
+            },
+            {
+                "signal_type": "endpoint_specific",
+                "endpoint": "/api/error",
+                "metric": "error_rate",
+                "observed": 1,
+                "baseline": 0,
+                "reason": "This endpoint is failing much harder than its peers."
+            }
+        ],
+        "baseline_values": {
+            "/api/slow": {
+                "average_latency": 0,
+                "request_rate": 0,
+                "error_rate": 0,
+                "sample_size": 9
+            },
+            "/api/error": {
+                "average_latency": 0.0012379763814616732,
+                "request_rate": 0,
+                "error_rate": 0,
+                "sample_size": 30
+            }
+        },
+        "observed_values": {
+            "/api/slow": {
+                "request_rate": 0.3882261593844851,
+                "error_rate": 0.36363636363636365,
+                "errors_per_second": 0.1411731488670855,
+                "average_latency": 1.9483264148148143,
+                "latency_percentiles": {
+                    "p50": 0.39583333333333337,
+                    "p95": 9.087837837837837,
+                    "p99": 9.817567567567568
+                },
+                "error_category_counters": {
+                    "TIMEOUT_ERROR": 39.64356506366185
+                }
+            },
+            "/api/error": {
+                "request_rate": 0.11764429072257125,
+                "error_rate": 1,
+                "errors_per_second": 0.11764429072257125,
+                "average_latency": 0.001585749999999997,
+                "latency_percentiles": {
+                    "p50": 0.025,
+                    "p95": 0.0475,
+                    "p99": 0.0495
+                },
+                "error_category_counters": {
+                    "SYSTEM_ERROR": 34.286326541545385
+                }
+            }
+        },
+        "summary": "Multiple endpoints are emitting elevated error rates at the same time.",
+        "resolved_at": "2026-04-11T17:04:06+00:00"
+    },
+    {
+        "incident_id": "57ca8f85-cd4c-48f9-9355-092377202ddf",
+        "incident_type": "LATENCY_SPIKE",
+        "severity": "high",
+        "status": "resolved",
+        "detected_at": "2026-04-11T17:04:06+00:00",
+        "affected_service": "Laravel",
+        "affected_endpoints": [
+            "/api/slow"
+        ],
+        "triggering_signals": [
+            {
+                "signal_type": "latency",
+                "endpoint": "/api/slow",
+                "metric": "average_latency",
+                "observed": 2.04429,
+                "baseline": 0,
+                "reason": "Latency is above the learned baseline."
+            }
+        ],
+        "baseline_values": {
+            "/api/slow": {
+                "average_latency": 0,
+                "request_rate": 0,
+                "error_rate": 0,
+                "sample_size": 9
+            }
+        },
+        "observed_values": {
+            "/api/slow": {
+                "request_rate": 0,
+                "error_rate": 0,
+                "errors_per_second": 0,
+                "average_latency": 2.044289541284401,
+                "latency_percentiles": {
+                    "p50": 0.39858490566037735,
+                    "p95": 9.120967741935484,
+                    "p99": 9.824193548387097
+                },
+                "error_category_counters": {
+                    "TIMEOUT_ERROR": 39.5754785228559
+                }
+            }
+        },
+        "summary": "Endpoint /api/slow exceeded its normal latency envelope.",
+        "resolved_at": "2026-04-11T17:04:26+00:00"
+    },
+    {
+        "incident_id": "b6faa81c-a619-4ff8-9ccf-845c6a3419b7",
+        "incident_type": "ERROR_STORM",
+        "severity": "critical",
+        "status": "resolved",
+        "detected_at": "2026-04-11T17:04:26+00:00",
+        "affected_service": "Laravel",
+        "affected_endpoints": [
+            "/api/slow",
+            "/api/error",
+            "/api/validate"
+        ],
+        "triggering_signals": [
+            {
+                "signal_type": "error_rate",
+                "endpoint": "/api/slow",
+                "metric": "error_rate",
+                "observed": 0.250019,
+                "baseline": 0,
+                "reason": "Error rate crossed the endpoint threshold."
+            },
+            {
+                "signal_type": "error_rate",
+                "endpoint": "/api/error",
+                "metric": "error_rate",
+                "observed": 1.000074,
+                "baseline": 0,
+                "reason": "Error rate crossed the endpoint threshold."
+            },
+            {
+                "signal_type": "endpoint_specific",
+                "endpoint": "/api/error",
+                "metric": "error_rate",
+                "observed": 1.000074,
+                "baseline": 0.125009,
+                "reason": "This endpoint is failing much harder than its peers."
+            },
+            {
+                "signal_type": "error_rate",
+                "endpoint": "/api/validate",
+                "metric": "error_rate",
+                "observed": 0.500037,
+                "baseline": 0.005952,
+                "reason": "Error rate crossed the endpoint threshold."
+            }
+        ],
+        "baseline_values": {
+            "/api/slow": {
+                "average_latency": 0,
+                "request_rate": 0,
+                "error_rate": 0,
+                "sample_size": 9
+            },
+            "/api/error": {
+                "average_latency": 0.0012869293035395952,
+                "request_rate": 0,
+                "error_rate": 0,
+                "sample_size": 30
+            },
+            "/api/validate": {
+                "average_latency": 0.009068438507325957,
+                "request_rate": 0.007381912928113986,
+                "error_rate": 0.005952380952380952,
+                "sample_size": 30
+            }
+        },
+        "observed_values": {
+            "/api/slow": {
+                "request_rate": 0.30037570583789075,
+                "error_rate": 0.25001850275691073,
+                "errors_per_second": 0.0750994842381397,
+                "average_latency": 1.986654203007517,
+                "latency_percentiles": {
+                    "p50": 0.39889705882352944,
+                    "p95": 9.10135135135135,
+                    "p99": 9.82027027027027
+                },
+                "error_category_counters": {
+                    "TIMEOUT_ERROR": 39.64625539331943
+                }
+            },
+            "/api/error": {
+                "request_rate": 0.10012523527929691,
+                "error_rate": 1.000074011027643,
+                "errors_per_second": 0.10013264565085293,
+                "average_latency": 0.001287800000000002,
+                "latency_percentiles": {
+                    "p50": 0.025,
+                    "p95": 0.0475,
+                    "p99": 0.0495
+                },
+                "error_category_counters": {
+                    "SYSTEM_ERROR": 32.145612481069804
+                }
+            },
+            "/api/validate": {
+                "request_rate": 0.025031308819824228,
+                "error_rate": 0.5000370055138215,
+                "errors_per_second": 0.012516580706356617,
+                "average_latency": 0.003818900000000003,
+                "latency_percentiles": {
+                    "p50": 0.025,
+                    "p95": 0.0475,
+                    "p99": 0.049499999999999995
+                },
+                "error_category_counters": {
+                    "VALIDATION_ERROR": 3.2145612481069805
+                }
+            }
+        },
+        "summary": "Multiple endpoints are emitting elevated error rates at the same time.",
+        "resolved_at": "2026-04-11T17:10:08+00:00"
+    },
+    {
+        "incident_id": "3d8453f1-d4f7-4f79-8908-f3e5114bae05",
+        "incident_type": "ERROR_STORM",
+        "severity": "critical",
+        "status": "resolved",
+        "detected_at": "2026-04-11T17:10:08+00:00",
+        "affected_service": "Laravel",
+        "affected_endpoints": [
+            "/api/slow",
+            "/api/error"
+        ],
+        "triggering_signals": [
+            {
+                "signal_type": "error_rate",
+                "endpoint": "/api/slow",
+                "metric": "error_rate",
+                "observed": 0.300018,
+                "baseline": 0,
+                "reason": "Error rate crossed the endpoint threshold."
+            },
+            {
+                "signal_type": "error_rate",
+                "endpoint": "/api/error",
+                "metric": "error_rate",
+                "observed": 1.00006,
+                "baseline": 0,
+                "reason": "Error rate crossed the endpoint threshold."
+            },
+            {
+                "signal_type": "endpoint_specific",
+                "endpoint": "/api/error",
+                "metric": "error_rate",
+                "observed": 1.00006,
+                "baseline": 0.125007,
+                "reason": "This endpoint is failing much harder than its peers."
+            }
+        ],
+        "baseline_values": {
+            "/api/slow": {
+                "average_latency": 0,
+                "request_rate": 0,
+                "error_rate": 0,
+                "sample_size": 9
+            },
+            "/api/error": {
+                "average_latency": 0.0012869293035395952,
+                "request_rate": 0,
+                "error_rate": 0,
+                "sample_size": 30
+            }
+        },
+        "observed_values": {
+            "/api/slow": {
+                "request_rate": 0.37156875819608365,
+                "error_rate": 0.30001794553530037,
+                "errors_per_second": 0.11147729545909181,
+                "average_latency": 1.7359687077922037,
+                "latency_percentiles": {
+                    "p50": 0.3695652173913043,
+                    "p95": 9.012820512820513,
+                    "p99": 9.802564102564101
+                },
+                "error_category_counters": {
+                    "TIMEOUT_ERROR": 41.05781782962058
+                }
+            },
+            "/api/error": {
+                "request_rate": 0.09289218954902091,
+                "error_rate": 1.0000598184510012,
+                "errors_per_second": 0.09289774621590985,
+                "average_latency": 0.0009646153846153899,
+                "latency_percentiles": {
+                    "p50": 0.025,
+                    "p95": 0.0475,
+                    "p99": 0.04950000000000001
+                },
+                "error_category_counters": {
+                    "SYSTEM_ERROR": 41.05781782962058
+                }
+            }
+        },
+        "summary": "Multiple endpoints are emitting elevated error rates at the same time.",
+        "resolved_at": "2026-04-11T17:13:08+00:00"
+    },
+    {
+        "incident_id": "d75ddce1-6b4f-4647-84f2-c8870abcb31a",
+        "incident_type": "ERROR_STORM",
+        "severity": "critical",
+        "status": "resolved",
+        "detected_at": "2026-04-11T17:13:08+00:00",
+        "affected_service": "Laravel",
+        "affected_endpoints": [
+            "/api/slow",
+            "/api/error",
+            "/api/validate"
+        ],
+        "triggering_signals": [
+            {
+                "signal_type": "error_rate",
+                "endpoint": "/api/slow",
+                "metric": "error_rate",
+                "observed": 0.211551,
+                "baseline": 0,
+                "reason": "Error rate crossed the endpoint threshold."
+            },
+            {
+                "signal_type": "error_rate",
+                "endpoint": "/api/error",
+                "metric": "error_rate",
+                "observed": 1.000058,
+                "baseline": 0,
+                "reason": "Error rate crossed the endpoint threshold."
+            },
+            {
+                "signal_type": "endpoint_specific",
+                "endpoint": "/api/error",
+                "metric": "error_rate",
+                "observed": 1.000058,
+                "baseline": 0.105775,
+                "reason": "This endpoint is failing much harder than its peers."
+            },
+            {
+                "signal_type": "error_rate",
+                "endpoint": "/api/validate",
+                "metric": "error_rate",
+                "observed": 1.000058,
+                "baseline": 0.007143,
+                "reason": "Error rate crossed the endpoint threshold."
+            },
+            {
+                "signal_type": "endpoint_specific",
+                "endpoint": "/api/validate",
+                "metric": "error_rate",
+                "observed": 1.000058,
+                "baseline": 0.105775,
+                "reason": "This endpoint is failing much harder than its peers."
+            }
+        ],
+        "baseline_values": {
+            "/api/slow": {
+                "average_latency": 0,
+                "request_rate": 0,
+                "error_rate": 0,
+                "sample_size": 9
+            },
+            "/api/error": {
+                "average_latency": 0.0012869293035395952,
+                "request_rate": 0,
+                "error_rate": 0,
+                "sample_size": 30
+            },
+            "/api/validate": {
+                "average_latency": 0.007828256432782853,
+                "request_rate": 0.012087523980162567,
+                "error_rate": 0.007142857142857143,
+                "sample_size": 30
+            }
+        },
+        "observed_values": {
+            "/api/slow": {
+                "request_rate": 0.5311509523865547,
+                "error_rate": 0.21155064417051367,
+                "errors_per_second": 0.11236532612915749,
+                "average_latency": 1.6527829662162103,
+                "latency_percentiles": {
+                    "p50": 0.3712121212121212,
+                    "p95": 8.942857142857141,
+                    "p99": 9.788571428571428
+                },
+                "error_category_counters": {
+                    "TIMEOUT_ERROR": 37.301425532530494
+                }
+            },
+            "/api/error": {
+                "request_rate": 0.14300217948868782,
+                "error_rate": 1.0000575906242464,
+                "errors_per_second": 0.14301041507347317,
+                "average_latency": 0.0011905151515151538,
+                "latency_percentiles": {
+                    "p50": 0.025,
+                    "p95": 0.047499999999999994,
+                    "p99": 0.0495
+                },
+                "error_category_counters": {
+                    "SYSTEM_ERROR": 35.16991550210018
+                }
+            },
+            "/api/validate": {
+                "request_rate": 0.01021444139204913,
+                "error_rate": 1.0000575906242464,
+                "errors_per_second": 0.010215029648105226,
+                "average_latency": 0.004632749999999963,
+                "latency_percentiles": {
+                    "p50": 0.025,
+                    "p95": 0.0475,
+                    "p99": 0.0495
+                },
+                "error_category_counters": {
+                    "VALIDATION_ERROR": 2.131510030430314
+                }
+            }
+        },
+        "summary": "Multiple endpoints are emitting elevated error rates at the same time.",
+        "resolved_at": "2026-04-11T17:18:30+00:00"
+    },
+    {
+        "incident_id": "461ba5bb-1fa0-44d1-bac0-b791bd6e779e",
+        "incident_type": "ERROR_STORM",
+        "severity": "critical",
+        "status": "resolved",
+        "detected_at": "2026-04-11T17:18:30+00:00",
+        "affected_service": "Laravel",
+        "affected_endpoints": [
+            "/api/slow",
+            "/api/error"
+        ],
+        "triggering_signals": [
+            {
+                "signal_type": "error_rate",
+                "endpoint": "/api/slow",
+                "metric": "error_rate",
+                "observed": 0.346129,
+                "baseline": 0,
+                "reason": "Error rate crossed the endpoint threshold."
+            },
+            {
+                "signal_type": "error_rate",
+                "endpoint": "/api/error",
+                "metric": "error_rate",
+                "observed": 0.999929,
+                "baseline": 0,
+                "reason": "Error rate crossed the endpoint threshold."
+            },
+            {
+                "signal_type": "endpoint_specific",
+                "endpoint": "/api/error",
+                "metric": "error_rate",
+                "observed": 0.999929,
+                "baseline": 0.166655,
+                "reason": "This endpoint is failing much harder than its peers."
+            }
+        ],
+        "baseline_values": {
+            "/api/slow": {
+                "average_latency": 0,
+                "request_rate": 0,
+                "error_rate": 0,
+                "sample_size": 9
+            },
+            "/api/error": {
+                "average_latency": 0.0012869293035395952,
+                "request_rate": 0,
+                "error_rate": 0,
+                "sample_size": 30
+            }
+        },
+        "observed_values": {
+            "/api/slow": {
+                "request_rate": 0.2528391840651148,
+                "error_rate": 0.34612911987829537,
+                "errors_per_second": 0.08751500425120451,
+                "average_latency": 1.9981325000000156,
+                "latency_percentiles": {
+                    "p50": 0.38636363636363635,
+                    "p95": 9.140625,
+                    "p99": 9.828125
+                },
+                "error_category_counters": {
+                    "TIMEOUT_ERROR": 35.67761757744799
+                }
+            },
+            "/api/error": {
+                "request_rate": 0.05834750401502649,
+                "error_rate": 0.9999285685372978,
+                "errors_per_second": 0.05834333616746967,
+                "average_latency": 0.0012262307692307679,
+                "latency_percentiles": {
+                    "p50": 0.025,
+                    "p95": 0.04750000000000001,
+                    "p99": 0.0495
+                },
+                "error_category_counters": {
+                    "SYSTEM_ERROR": 28.988064281676493
+                }
+            }
+        },
+        "summary": "Multiple endpoints are emitting elevated error rates at the same time.",
+        "resolved_at": "2026-04-11T17:19:30+00:00"
+    },
+    {
+        "incident_id": "bba08d1a-1dbb-4998-819f-9215770faab2",
+        "incident_type": "LATENCY_SPIKE",
+        "severity": "high",
+        "status": "resolved",
+        "detected_at": "2026-04-11T17:19:30+00:00",
+        "affected_service": "Laravel",
+        "affected_endpoints": [
+            "/api/slow"
+        ],
+        "triggering_signals": [
+            {
+                "signal_type": "latency",
+                "endpoint": "/api/slow",
+                "metric": "average_latency",
+                "observed": 1.891953,
+                "baseline": 0,
+                "reason": "Latency is above the learned baseline."
+            }
+        ],
+        "baseline_values": {
+            "/api/slow": {
+                "average_latency": 0,
+                "request_rate": 0,
+                "error_rate": 0,
+                "sample_size": 9
+            }
+        },
+        "observed_values": {
+            "/api/slow": {
+                "request_rate": 0,
+                "error_rate": 0,
+                "errors_per_second": 0,
+                "average_latency": 1.8919531544715418,
+                "latency_percentiles": {
+                    "p50": 0.3912037037037037,
+                    "p95": 9.095588235294118,
+                    "p99": 9.819117647058823
+                },
+                "error_category_counters": {
+                    "TIMEOUT_ERROR": 41.63605192260593
+                }
+            }
+        },
+        "summary": "Endpoint /api/slow exceeded its normal latency envelope.",
+        "resolved_at": "2026-04-11T17:19:50+00:00"
+    },
+    {
+        "incident_id": "cc551a9e-c95c-4265-a19e-5a2a1a16f5c4",
+        "incident_type": "ERROR_STORM",
+        "severity": "critical",
+        "status": "resolved",
+        "detected_at": "2026-04-11T17:19:50+00:00",
+        "affected_service": "Laravel",
+        "affected_endpoints": [
+            "/api/slow",
+            "/api/error",
+            "/api/validate"
+        ],
+        "triggering_signals": [
+            {
+                "signal_type": "error_rate",
+                "endpoint": "/api/slow",
+                "metric": "error_rate",
+                "observed": 0.190496,
+                "baseline": 0,
+                "reason": "Error rate crossed the endpoint threshold."
+            },
+            {
+                "signal_type": "error_rate",
+                "endpoint": "/api/error",
+                "metric": "error_rate",
+                "observed": 1.000105,
+                "baseline": 0,
+                "reason": "Error rate crossed the endpoint threshold."
+            },
+            {
+                "signal_type": "endpoint_specific",
+                "endpoint": "/api/error",
+                "metric": "error_rate",
+                "observed": 1.000105,
+                "baseline": 0.095248,
+                "reason": "This endpoint is failing much harder than its peers."
+            },
+            {
+                "signal_type": "error_rate",
+                "endpoint": "/api/validate",
+                "metric": "error_rate",
+                "observed": 0.500052,
+                "baseline": 0.016072,
+                "reason": "Error rate crossed the endpoint threshold."
+            },
+            {
+                "signal_type": "endpoint_specific",
+                "endpoint": "/api/validate",
+                "metric": "error_rate",
+                "observed": 0.500052,
+                "baseline": 0.095248,
+                "reason": "This endpoint is failing much harder than its peers."
+            }
+        ],
+        "baseline_values": {
+            "/api/slow": {
+                "average_latency": 0,
+                "request_rate": 0,
+                "error_rate": 0,
+                "sample_size": 9
+            },
+            "/api/error": {
+                "average_latency": 0.0012906599758085028,
+                "request_rate": 0,
+                "error_rate": 0,
+                "sample_size": 30
+            },
+            "/api/validate": {
+                "average_latency": 0.007108265956592372,
+                "request_rate": 0.013575872266145183,
+                "error_rate": 0.016071962664741084,
+                "sample_size": 30
+            }
+        },
+        "observed_values": {
+            "/api/slow": {
+                "request_rate": 0.27926047295043693,
+                "error_rate": 0.19049609623238775,
+                "errors_per_second": 0.05319802992906855,
+                "average_latency": 1.811359187500001,
+                "latency_percentiles": {
+                    "p50": 0.38461538461538464,
+                    "p95": 9.052631578947368,
+                    "p99": 9.810526315789474
+                },
+                "error_category_counters": {
+                    "TIMEOUT_ERROR": 41.46027451065966
+                }
+            },
+            "/api/error": {
+                "request_rate": 0.06649058879772307,
+                "error_rate": 1.0001045052200357,
+                "errors_per_second": 0.06649753741133568,
+                "average_latency": 0.001093384615384617,
+                "latency_percentiles": {
+                    "p50": 0.025,
+                    "p95": 0.0475,
+                    "p99": 0.0495
+                },
+                "error_category_counters": {
+                    "SYSTEM_ERROR": 42.551334366203335
+                }
+            },
+            "/api/validate": {
+                "request_rate": 0.02659623551908923,
+                "error_rate": 0.500052252610018,
+                "errors_per_second": 0.013299507482267138,
+                "average_latency": 0.003637285714285708,
+                "latency_percentiles": {
+                    "p50": 0.025,
+                    "p95": 0.0475,
+                    "p99": 0.0495
+                },
+                "error_category_counters": {
+                    "VALIDATION_ERROR": 7.6374189888057264
+                }
+            }
+        },
+        "summary": "Multiple endpoints are emitting elevated error rates at the same time.",
+        "resolved_at": "2026-04-11T17:21:10+00:00"
+    },
+    {
+        "incident_id": "d88c19e8-4de4-4abc-bc83-2d1fe40342d6",
+        "incident_type": "ERROR_STORM",
+        "severity": "critical",
+        "status": "resolved",
+        "detected_at": "2026-04-11T17:21:10+00:00",
+        "affected_service": "Laravel",
+        "affected_endpoints": [
+            "/api/slow",
+            "/api/error"
+        ],
+        "triggering_signals": [
+            {
+                "signal_type": "error_rate",
+                "endpoint": "/api/slow",
+                "metric": "error_rate",
+                "observed": 0.166667,
+                "baseline": 0,
+                "reason": "Error rate crossed the endpoint threshold."
+            },
+            {
+                "signal_type": "error_rate",
+                "endpoint": "/api/error",
+                "metric": "error_rate",
+                "observed": 1,
+                "baseline": 0,
+                "reason": "Error rate crossed the endpoint threshold."
+            },
+            {
+                "signal_type": "endpoint_specific",
+                "endpoint": "/api/error",
+                "metric": "error_rate",
+                "observed": 1,
+                "baseline": 0,
+                "reason": "This endpoint is failing much harder than its peers."
+            }
+        ],
+        "baseline_values": {
+            "/api/slow": {
+                "average_latency": 0,
+                "request_rate": 0,
+                "error_rate": 0,
+                "sample_size": 9
+            },
+            "/api/error": {
+                "average_latency": 0.0012906599758085028,
+                "request_rate": 0,
+                "error_rate": 0,
+                "sample_size": 30
+            }
+        },
+        "observed_values": {
+            "/api/slow": {
+                "request_rate": 0.30000000000000004,
+                "error_rate": 0.16666666666666666,
+                "errors_per_second": 0.05,
+                "average_latency": 1.8919251634615473,
+                "latency_percentiles": {
+                    "p50": 0.395,
+                    "p95": 9.133333333333333,
+                    "p99": 9.826666666666668
+                },
+                "error_category_counters": {
+                    "TIMEOUT_ERROR": 34.909771141733195
+                }
+            },
+            "/api/error": {
+                "request_rate": 0.1,
+                "error_rate": 1,
+                "errors_per_second": 0.1,
+                "average_latency": 0.0010512758620689708,
+                "latency_percentiles": {
+                    "p50": 0.025,
+                    "p95": 0.0475,
+                    "p99": 0.0495
+                },
+                "error_category_counters": {
+                    "SYSTEM_ERROR": 33.74611210367542
+                }
+            }
+        },
+        "summary": "Multiple endpoints are emitting elevated error rates at the same time.",
+        "resolved_at": "2026-04-11T17:21:51+00:00"
+    },
+    {
+        "incident_id": "3677ff21-2524-4660-ba1a-38a56563272e",
+        "incident_type": "LATENCY_SPIKE",
+        "severity": "high",
+        "status": "resolved",
+        "detected_at": "2026-04-11T17:21:51+00:00",
+        "affected_service": "Laravel",
+        "affected_endpoints": [
+            "/api/slow"
+        ],
+        "triggering_signals": [
+            {
+                "signal_type": "latency",
+                "endpoint": "/api/slow",
+                "metric": "average_latency",
+                "observed": 1.804168,
+                "baseline": 0,
+                "reason": "Latency is above the learned baseline."
+            }
+        ],
+        "baseline_values": {
+            "/api/slow": {
+                "average_latency": 0,
+                "request_rate": 0,
+                "error_rate": 0,
+                "sample_size": 9
+            }
+        },
+        "observed_values": {
+            "/api/slow": {
+                "request_rate": 0,
+                "error_rate": 0,
+                "errors_per_second": 0,
+                "average_latency": 1.8041677717391316,
+                "latency_percentiles": {
+                    "p50": 0.391304347826087,
+                    "p95": 9.08,
+                    "p99": 9.816
+                },
+                "error_category_counters": {
+                    "TIMEOUT_ERROR": 29.11270811902313
+                }
+            }
+        },
+        "summary": "Endpoint /api/slow exceeded its normal latency envelope.",
+        "resolved_at": "2026-04-11T17:24:51+00:00"
     }
 ]

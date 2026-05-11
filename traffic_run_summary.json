@@ -1,35 +1,37 @@
 {
-  "run_id": "run-1772893496",
-  "experiment_start_iso": "2026-03-07T14:24:56.133803+00:00",
-  "experiment_end_iso": "2026-03-07T14:34:56.133803+00:00",
-  "anomaly_start_iso": "2026-03-07T14:32:56.133803+00:00",
-  "anomaly_end_iso": "2026-03-07T14:34:56.133803+00:00",
+  "run_id": "run-1775926733",
+  "experiment_start_iso": "2026-04-11T16:58:53.312996+00:00",
+  "experiment_end_iso": "2026-04-11T17:08:53.312996+00:00",
+  "anomaly_start_iso": "2026-04-11T17:06:53.312996+00:00",
+  "anomaly_end_iso": "2026-04-11T17:08:53.312996+00:00",
   "anomaly_type": "latency_spike",
   "base_minutes": 8,
   "requests_per_second": 7,
+  "max_workers": 24,
   "stats": {
     "requested": 4200,
     "base_requested": 3360,
     "anomaly_requested": 840,
     "completed": 4200,
-    "transport_errors": 4037,
+    "transport_errors": 632,
     "by_endpoint": {
-      "normal": 2699,
-      "slow_hard": 415,
-      "slow": 668,
-      "db": 143,
-      "validate": 77,
-      "error": 198
+      "normal": 2734,
+      "slow": 624,
+      "error": 219,
+      "slow_hard": 414,
+      "db": 130,
+      "validate": 79
     },
     "status_code_counts": {
-      "200": 155,
-      "500": 8
+      "200": 3350,
+      "500": 183,
+      "422": 35
     }
   },
-  "exported_logs_entries": 1090,
-  "exported_error_logs": 108,
+  "exported_logs_entries": 4197,
+  "exported_error_logs": 669,
   "requirements_check": {
-    "logs_entries_ge_1500": false,
+    "logs_entries_ge_1500": true,
     "error_logs_ge_100": true,
     "base_requests_ge_minimum": true
   }

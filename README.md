@@ -210,6 +210,31 @@ docker compose up -d
 - Prometheus: `http://localhost:9090`
 - Grafana: `http://localhost:3000` (default `admin` / `admin`)
 
+## 8.5 One-command demo runner (PowerShell)
+
+On Windows PowerShell, you can run the full demo workflow with:
+
+```powershell
+.\run_aiops_demo.ps1 -StartDetector -StartResponder
+```
+
+What it does:
+
+- starts Prometheus + Grafana with Docker Compose
+- starts `php artisan serve` in a new PowerShell window
+- waits for `/` and `/metrics` to become ready
+- optionally starts `php artisan aiops:detect`
+- optionally starts `php artisan aiops:respond --watch`
+- runs `traffic_generator.py`
+
+Useful variations:
+
+```powershell
+.\run_aiops_demo.ps1 -AnomalyType error_spike
+.\run_aiops_demo.ps1 -SkipTraffic
+.\run_aiops_demo.ps1 -BaseMinutes 10 -MaxWorkers 30
+```
+
 ## 9. How To Use + Test End-to-End
 
 ## 9.1 Quick endpoint test
@@ -390,3 +415,25 @@ The engine raises `CRITICAL_ALERT` when either:
 4. Run `php artisan aiops:respond`
 5. Inspect `storage/aiops/responses.json`
 6. Run `php artisan aiops:respond` again while an incident is still open to demonstrate escalation
+
+## 14. Root Cause Analysis
+
+Lab Work 4 is implemented by `ml/root_cause_analysis.mjs`. It consumes the Lab 3 anomaly windows from `anomaly_predictions.csv` and the engineered telemetry rows from `aiops_dataset.csv`, then attributes the selected incident across latency, request rate, error rate, endpoint activity, and error-category signals.
+
+Run the RCA stage:
+
+```bash
+npm run rca
+```
+
+Generated deliverables:
+
+- `rca_report.json`: structured RCA output with `incident_id`, `root_cause_endpoint`, `primary_signal`, `supporting_evidence`, `confidence_score`, and `recommended_action`
+- `visualizations/rca/incident_timeline.svg`: incident timeline visualization covering normal state, anomaly start, peak incident, and recovery status
+- `RCA_Report.md`: two-page RCA report content ready for PDF export
+
+Current RCA result:
+
+- Root cause endpoint: `/api/slow`
+- Primary signal: `latency`
+- Dominant root-cause error category: `TIMEOUT_ERROR`

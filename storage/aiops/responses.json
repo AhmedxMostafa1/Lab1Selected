@@ -1,1 +1,23 @@
-[]
+[
+    {
+        "incident_id": "lab5-demo-latency-spike",
+        "action_taken": "restart_service",
+        "timestamp": "2026-05-06T17:43:52+00:00",
+        "result": "success",
+        "notes": "Simulated application service restart to recover high latency. Targets: Laravel on /api/slow."
+    },
+    {
+        "incident_id": "lab5-demo-error-storm",
+        "action_taken": "send_alert",
+        "timestamp": "2026-05-06T17:43:52+00:00",
+        "result": "failed",
+        "notes": "Simulated send alert for Laravel failed while handling ERROR_STORM on /api/error."
+    },
+    {
+        "incident_id": "lab5-demo-error-storm",
+        "action_taken": "CRITICAL_ALERT",
+        "timestamp": "2026-05-06T17:43:52+00:00",
+        "result": "success",
+        "notes": "Automated response failed, so the engine escalated the incident for manual intervention."
+    }
+]

@@ -1,0 +1,276 @@
+{
+  "incident_id": "INC-20260307T143356Z",
+  "selected_window": {
+    "window_start": "2026-03-07T14:33:26.000Z",
+    "window_end": "2026-03-07T14:34:26.000Z",
+    "peak_timestamp": "2026-03-07T14:34:26.000Z",
+    "anomaly_score": 0.711695,
+    "threshold": 0.699493,
+    "source": "anomaly_predictions.csv"
+  },
+  "root_cause_endpoint": "/api/slow",
+  "primary_signal": "latency",
+  "supporting_evidence": {
+    "endpoint_attribution": [
+      {
+        "endpoint": "/api/slow",
+        "contribution_score": 8.155806,
+        "baseline": {
+          "avg_latency": 1054.647302,
+          "max_latency": 7016.15,
+          "request_rate": 0.377639,
+          "error_rate": 0.192166,
+          "endpoint_frequency": 0.148979,
+          "errors_per_window": 2.177083,
+          "request_count_window": 11.329167,
+          "anomaly_score": 0.70152
+        },
+        "incident": {
+          "avg_latency": 2114.003467,
+          "max_latency": 7016.15,
+          "request_rate": 0.567778,
+          "error_rate": 0.214286,
+          "endpoint_frequency": 0.265706,
+          "errors_per_window": 3.65,
+          "request_count_window": 17.033333,
+          "anomaly_score": 0.702821
+        },
+        "deltas": {
+          "avg_latency": 1059.356165,
+          "max_latency": 0,
+          "request_rate": 0.190139,
+          "error_rate": 0.022119,
+          "endpoint_frequency": 0.116727,
+          "errors_per_window": 1.472917
+        }
+      },
+      {
+        "endpoint": "/api/error",
+        "contribution_score": 0.493712,
+        "baseline": {
+          "avg_latency": 0.8685,
+          "max_latency": 7.11,
+          "request_rate": 0.067361,
+          "error_rate": 1,
+          "endpoint_frequency": 0.021918,
+          "errors_per_window": 2.020833,
+          "request_count_window": 2.020833,
+          "anomaly_score": 0.595806
+        },
+        "incident": {
+          "avg_latency": 2.5087,
+          "max_latency": 7.29,
+          "request_rate": 0.166667,
+          "error_rate": 1,
+          "endpoint_frequency": 0.056654,
+          "errors_per_window": 5,
+          "request_count_window": 5,
+          "anomaly_score": 0.615313
+        },
+        "deltas": {
+          "avg_latency": 1.6402,
+          "max_latency": 0.18,
+          "request_rate": 0.099305,
+          "error_rate": 0,
+          "endpoint_frequency": 0.034737,
+          "errors_per_window": 2.979167
+        }
+      },
+      {
+        "endpoint": "/api/normal",
+        "contribution_score": 0.313623,
+        "baseline": {
+          "avg_latency": 1.055487,
+          "max_latency": 34.81,
+          "request_rate": 1.254236,
+          "error_rate": 0,
+          "endpoint_frequency": 0.423848,
+          "errors_per_window": 0,
+          "request_count_window": 37.627083,
+          "anomaly_score": 0.562261
+        },
+        "incident": {
+          "avg_latency": 2.1483,
+          "max_latency": 9.2,
+          "request_rate": 1.692222,
+          "error_rate": 0,
+          "endpoint_frequency": 0.620053,
+          "errors_per_window": 0,
+          "request_count_window": 50.766667,
+          "anomaly_score": 0.512019
+        },
+        "deltas": {
+          "avg_latency": 1.092813,
+          "max_latency": -25.61,
+          "request_rate": 0.437986,
+          "error_rate": 0,
+          "endpoint_frequency": 0.196205,
+          "errors_per_window": 0
+        }
+      },
+      {
+        "endpoint": "/api/db",
+        "contribution_score": 0.153325,
+        "baseline": {
+          "avg_latency": 6.613046,
+          "max_latency": 33.08,
+          "request_rate": 0.079861,
+          "error_rate": 0,
+          "endpoint_frequency": 0.027405,
+          "errors_per_window": 0,
+          "request_count_window": 2.395833,
+          "anomaly_score": 0.536259
+        },
+        "incident": {
+          "avg_latency": 13.543817,
+          "max_latency": 27.2,
+          "request_rate": 0.079444,
+          "error_rate": 0,
+          "endpoint_frequency": 0.03811,
+          "errors_per_window": 0,
+          "request_count_window": 2.383333,
+          "anomaly_score": 0.515412
+        },
+        "deltas": {
+          "avg_latency": 6.930771,
+          "max_latency": -5.88,
+          "request_rate": -0.000417,
+          "error_rate": 0,
+          "endpoint_frequency": 0.010705,
+          "errors_per_window": 0
+        }
+      },
+      {
+        "endpoint": "/api/validate",
+        "contribution_score": 0.102492,
+        "baseline": {
+          "avg_latency": 5.33845,
+          "max_latency": 86.79,
+          "request_rate": 0.034375,
+          "error_rate": 0.513131,
+          "endpoint_frequency": 0.011184,
+          "errors_per_window": 0.529167,
+          "request_count_window": 1.03125,
+          "anomaly_score": 0.615975
+        },
+        "incident": {
+          "avg_latency": 8.093417,
+          "max_latency": 17.54,
+          "request_rate": 0.055556,
+          "error_rate": 0.42,
+          "endpoint_frequency": 0.019476,
+          "errors_per_window": 0.7,
+          "request_count_window": 1.666667,
+          "anomaly_score": 0.548106
+        },
+        "deltas": {
+          "avg_latency": 2.754967,
+          "max_latency": -69.25,
+          "request_rate": 0.021181,
+          "error_rate": -0.093131,
+          "endpoint_frequency": 0.008292,
+          "errors_per_window": 0.170833
+        }
+      }
+    ],
+    "error_categories": {
+      "dominant_category": "SYSTEM_ERROR",
+      "estimated_total_errors": 561.000014,
+      "distribution": {
+        "TIMEOUT_ERROR": {
+          "estimated_count": 219.000026,
+          "share": 0.390374
+        },
+        "SYSTEM_ERROR": {
+          "estimated_count": 300,
+          "share": 0.534759
+        },
+        "DATABASE_ERROR": {
+          "estimated_count": 0,
+          "share": 0
+        },
+        "VALIDATION_ERROR": {
+          "estimated_count": 41.999988,
+          "share": 0.074866
+        },
+        "UNKNOWN": {
+          "estimated_count": 0,
+          "share": 0
+        }
+      }
+    },
+    "root_cause_error_categories": {
+      "dominant_category": "TIMEOUT_ERROR",
+      "estimated_total_errors": 219.000026,
+      "distribution": {
+        "TIMEOUT_ERROR": {
+          "estimated_count": 219.000026,
+          "share": 1
+        },
+        "SYSTEM_ERROR": {
+          "estimated_count": 0,
+          "share": 0
+        },
+        "DATABASE_ERROR": {
+          "estimated_count": 0,
+          "share": 0
+        },
+        "VALIDATION_ERROR": {
+          "estimated_count": 0,
+          "share": 0
+        },
+        "UNKNOWN": {
+          "estimated_count": 0,
+          "share": 0
+        }
+      }
+    },
+    "anomaly_windows": [
+      {
+        "window_start": "2026-03-07T14:33:26.000Z",
+        "window_end": "2026-03-07T14:33:56.000Z",
+        "anomaly_score": 0.702821,
+        "anomalous_endpoints": [
+          "/api/slow"
+        ]
+      },
+      {
+        "window_start": "2026-03-07T14:33:56.000Z",
+        "window_end": "2026-03-07T14:34:26.000Z",
+        "anomaly_score": 0.711695,
+        "anomalous_endpoints": [
+          "/api/slow"
+        ]
+      }
+    ],
+    "timeline": [
+      {
+        "state": "normal_state",
+        "timestamp": "2026-03-07T14:33:26.000Z",
+        "description": "Window below anomaly threshold with score 0.614619."
+      },
+      {
+        "state": "anomaly_start",
+        "timestamp": "2026-03-07T14:33:26.000Z",
+        "description": "Detected anomaly group opened for /api/slow."
+      },
+      {
+        "state": "peak_incident",
+        "timestamp": "2026-03-07T14:34:25.000Z",
+        "description": "/api/slow reached avg latency 6259.08 ms with 0.214 error rate."
+      },
+      {
+        "state": "recovery",
+        "timestamp": "2026-03-07T14:34:26.000Z",
+        "description": "Recovery was not captured in the exported prediction range; dataset ends while the incident is still active or tapering."
+      }
+    ]
+  },
+  "confidence_score": 0.881665,
+  "recommended_action": "Investigate /api/slow slow path, reduce timeout-prone work, and add a latency guard or async queue for hard slow requests.",
+  "generated_files": {
+    "json": "rca_report.json",
+    "timeline_visualization": "visualizations\\rca\\incident_timeline.svg",
+    "report": "RCA_Report.md"
+  }
+}
